@@ -259,12 +259,6 @@ Press SELECT then START to see the third state: once a thread is really gone, Th
 
 ---
 
-## History
-
-This plugin started out as "Actor Tools", then briefly "Pause Resume Thread". The actor-side events — iterating actors in an area, extended actor property get/set, forcing an actor script to run, and the actor activated / deactivated callbacks — now live in the [Dynamic Actor plugin](https://github.com/Mico27/gbs-DynamicActorPlugin).
-
----
-
 ## License
 
 MIT
