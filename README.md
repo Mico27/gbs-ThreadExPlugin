@@ -19,8 +19,7 @@ https://github.com/user-attachments/assets/96f36d35-0092-4c0c-95a2-a66232674233
 5. [Events Reference](#events-reference)
 6. [Media](#media)
 7. [Memory Footprint](#memory-footprint)
-8. [History](#history)
-9. [License](#license)
+8. [License](#license)
 
 ---
 
