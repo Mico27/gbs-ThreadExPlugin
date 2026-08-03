@@ -1,0 +1,16 @@
+{
+  "_resourceType": "variables",
+  "variables": [
+    {
+      "id": "0",
+      "name": "BThreadHandle",
+      "symbol": "var_b_thread_handle"
+    },
+    {
+      "id": "1",
+      "name": "ThreadCount",
+      "symbol": "var_thread_count"
+    }
+  ],
+  "constants": []
+}

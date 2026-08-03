@@ -1,0 +1,285 @@
+{
+  "_resourceType": "scene",
+  "id": "6f94c75c-83e7-4bfc-ad9d-c7df73390aae",
+  "_index": 0,
+  "name": "Thread Ex Demo",
+  "backgroundId": "1e5f9d6a-bdbc-43e6-8c34-22f5bb5dea05",
+  "tilesetId": "",
+  "width": 20,
+  "height": 18,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "",
+  "autoFadeSpeed": 1,
+  "symbol": "scene_thread_ex_demo",
+  "x": 256,
+  "y": 256,
+  "script": [
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "=== ThreadExPlugin demo ==="
+      },
+      "id": "966edfa4-0622-4f05-afac-e2e702708e87"
+    },
+    {
+      "command": "EVENT_THREAD_START",
+      "args": {
+        "variable": "0"
+      },
+      "id": "0d31231c-a05f-46a2-b1a8-7298a3d495cb",
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_LOOP",
+            "args": {},
+            "id": "13e9b55a-ee7c-4698-a2e1-7854a51ec535",
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                  "args": {
+                    "actorId": "f1c589da-933c-43a7-9412-cdc31bcf9e27",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "collideWith": [],
+                    "moveType": "horizontal",
+                    "units": "tiles",
+                    "__section": "movement"
+                  },
+                  "id": "3bff6bc1-a42e-4df7-9a29-e009396fe0f2"
+                },
+                {
+                  "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                  "args": {
+                    "actorId": "f1c589da-933c-43a7-9412-cdc31bcf9e27",
+                    "x": {
+                      "type": "number",
+                      "value": -6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "collideWith": [],
+                    "moveType": "horizontal",
+                    "units": "tiles",
+                    "__section": "movement"
+                  },
+                  "id": "ef5bd5b2-c88d-4c1f-8c54-1dadef542601"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "a"
+        ],
+        "override": true
+      },
+      "id": "ad6ccfb7-ca86-4c2a-8ef2-1019677fecf1",
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_THREAD_EX_UPDATE_SCRIPT_PAUSE",
+            "args": {
+              "actorId": "e8d61e02-f5c9-411a-ac9a-efdccf5821ca"
+            },
+            "id": "22d7fafb-96a8-4bc1-8faf-1e03aaf491c6"
+          },
+          {
+            "command": "EVENT_THREAD_EX_THREAD_PAUSE",
+            "args": {
+              "variable": "0"
+            },
+            "id": "66e52179-cbb1-437d-a12f-eb7fae8745cc"
+          }
+        ]
+      }
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "b"
+        ],
+        "override": true
+      },
+      "id": "397c519f-da2b-4c0c-9e94-c50ce015f8e4",
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_THREAD_EX_UPDATE_SCRIPT_RESUME",
+            "args": {
+              "actorId": "e8d61e02-f5c9-411a-ac9a-efdccf5821ca"
+            },
+            "id": "a69c51a8-fab6-41c2-b664-b90a3af79aca"
+          },
+          {
+            "command": "EVENT_THREAD_EX_THREAD_RESUME",
+            "args": {
+              "variable": "0"
+            },
+            "id": "f6e5d61e-949b-4408-a233-583de9d9e8b6"
+          }
+        ]
+      }
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "start"
+        ],
+        "override": true
+      },
+      "id": "9a2cfa11-267b-4fb9-a4a7-c2ae425512b9",
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_THREAD_EX_GET_THREAD_COUNT",
+            "args": {
+              "variable": "1"
+            },
+            "id": "90408328-b28e-4633-9c7b-16955e70d5bc"
+          },
+          {
+            "command": "EVENT_THREAD_EX_IF_THREAD_STATE",
+            "args": {
+              "variable": "0",
+              "state": "running"
+            },
+            "id": "b3b4e1a1-269c-4408-af19-ac33f738a8f5",
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "B thread: RUNNING\nThreads: $1$ of 16"
+                    ],
+                    "__section": "text"
+                  },
+                  "id": "2d9576ec-ade0-47ad-9f9a-bda3218d55e6"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_THREAD_EX_IF_THREAD_STATE",
+                  "args": {
+                    "variable": "0",
+                    "state": "paused"
+                  },
+                  "id": "ac312cbd-3891-488b-b233-68995c434cb5",
+                  "children": {
+                    "true": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "B thread: PAUSED\nThreads: $1$ of 16"
+                          ],
+                          "__section": "text"
+                        },
+                        "id": "50dcad46-6544-4533-b327-dcd976415323"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "B thread: STOPPED\nThreads: $1$ of 16"
+                          ],
+                          "__section": "text"
+                        },
+                        "id": "7c8e1bd8-2ab1-4d6a-8196-9905ebdd5f18"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "select"
+        ],
+        "override": true
+      },
+      "id": "f0b842ea-2f37-42a7-8a70-4a6c33071f57",
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_THREAD_STOP",
+            "args": {
+              "variable": "0"
+            },
+            "id": "64a6ef14-3a15-4b92-929c-1c8a07b5282e"
+          },
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "B thread stopped.\nSTART to check it."
+              ],
+              "__section": "text"
+            },
+            "id": "562c7c65-2b73-4565-958b-35f29290f412"
+          }
+        ]
+      }
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "A and B pace by\nthread, C never\nstops."
+        ],
+        "__section": "text"
+      },
+      "id": "2179baec-b02c-48f3-80a8-13de28e42bc5"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "A: freeze A and B\nB: unfreeze both"
+        ],
+        "__section": "text"
+      },
+      "id": "e3914e0b-ff7f-4fa7-9959-95e58dd01987"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "START: report\nSELECT: kill B"
+        ],
+        "__section": "text"
+      },
+      "id": "edd23017-3eec-40e6-81ca-5d568895838c"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

@@ -1,0 +1,8 @@
+{
+  "_resourceType": "project",
+  "name": "ThreadExTest",
+  "author": "Mico27",
+  "notes": "Example project exercising every gbs-ThreadExPlugin event.",
+  "_version": "4.2.0",
+  "_release": "10"
+}
