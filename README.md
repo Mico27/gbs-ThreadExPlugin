@@ -14,6 +14,10 @@ gone, and read how many thread contexts are still free.
 Because it neither replaces nor patches any stock engine file, this plugin has
 no `engineAlt/` variants and composes with every other plugin.
 
+
+https://github.com/user-attachments/assets/96f36d35-0092-4c0c-95a2-a66232674233
+
+
 ---
 
 ## Installation
