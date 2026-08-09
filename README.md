@@ -315,3 +315,15 @@ runs out of.
 **This plugin costs nothing in bank 0.** Every one of its functions is compiled
 into a switchable ROM bank; nothing it adds is resident in bank 0.
 <!-- BANK0:END -->
+
+## Changelog
+
+Grouped by the date each change was merged into the official
+[gb-studio-plugins](https://github.com/gb-studio-dev/gb-studio-plugins) repository.
+
+Only bug fixes, new features and feature changes are listed. Engine version
+bumps, patch regeneration, packaging fixes and documentation edits are omitted.
+
+### 2026-08-03
+
+- Initial release: pause and resume threads and actor onUpdate scripts without terminating them, plus a thread state check and a thread count getter.
