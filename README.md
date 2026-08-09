@@ -20,6 +20,8 @@ https://github.com/user-attachments/assets/96f36d35-0092-4c0c-95a2-a66232674233
 6. [Media](#media)
 7. [Memory Footprint](#memory-footprint)
 8. [License](#license)
+9. [Bank 0 (HOME) Usage](#bank-0-home-usage)
+10. [Changelog](#changelog)
 
 ---
 
