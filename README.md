@@ -284,14 +284,17 @@ and settings that gate other settings only show their own contribution.
 
 ## Memory Footprint
 
-| | Cost |
-|---|---|
-| WRAM | +0 bytes |
-| SRAM | +0 bytes |
-| ROM | +997 bytes with every feature enabled |
+Measured against the stock GB Studio **4.3.0-e1** engine by `measure_plugin_memory.js` (per-file SDCC compile with GB Studio's own build flags, at default engine settings; report of 2026-08-13). Figures are this plugin's *delta* versus stock — a file that replaces a stock engine file counts only the difference, which is why a plugin can come out negative. Using the plugin's events additionally compiles a few bytes of GBVM script per call into your project's script banks, on top of the fixed cost below.
 
+| Budget | Cost |
+|---|---|
+| Bank 0 (HOME) | 0 bytes |
+| WRAM | 0 bytes |
+| Banked ROM | +997 bytes |
+
+- **Bank 0:** nothing. Every function the plugin adds is compiled into a switchable ROM bank.
 - **WRAM / HRAM / SRAM:** none. A paused thread's resume point is kept on that thread's own stack, so pausing needs no memory of its own and leaves nothing behind when a thread ends or the scene changes.
-- **ROM:** 997 bytes with all four features on, and less with any of them unchecked — see [Engine Settings](#engine-settings) for the per-feature figures. Using the plugin's events additionally compiles a few bytes of GBVM script per call into your project's script banks.
+- **Banked ROM:** 997 bytes with all four features on, and less with any of them unchecked — see [What each engine setting costs](#what-each-engine-setting-costs) for the per-feature figures.
 - **Thread contexts:** a paused thread keeps its context, so it still counts against the engine's 16.
 
 ---
